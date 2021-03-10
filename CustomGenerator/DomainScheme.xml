@@ -1,0 +1,66 @@
+<Domains>
+	<Domain Name = "IttEntity">		
+		<Field>
+			<Type>int</Type>
+			<Name>Id</Name>
+		</Field>
+		<Field>
+			<Type>string</Type>
+			<Name>Name</Name>
+		</Field>
+		<Field>
+			<Type>bool</Type>
+			<Name>IsExists</Name>
+		</Field>
+	</Domain>
+	<Domain Name = "IFuckEntity">		
+		<Field>
+			<Type>int</Type>
+			<Name>Id</Name>
+		</Field>
+		<Field>
+			<Type>string</Type>
+			<Name>FirstName</Name>
+		</Field>
+		<Field>
+			<Type>string</Type>
+			<Name>LastName</Name>
+		</Field>
+		<Field>
+			<Type>int</Type>
+			<Name>SomethingValue</Name>
+		</Field>
+	</Domain>
+	<Domain Name = "IEmployee">		
+		<Field>
+			<Type>int</Type>
+			<Name>Id</Name>
+		</Field>
+		<Field>
+			<Type>string</Type>
+			<Name>FirstName</Name>
+		</Field>
+		<Field>
+			<Type>string</Type>
+			<Name>LastName</Name>
+		</Field>
+		<Field>
+			<Type>string</Type>
+			<Name>SecondName</Name>
+		</Field>
+		<Field>
+			<Type>int</Type>
+			<Name>SomethingValue</Name>
+		</Field>
+	</Domain>
+	<Domain Name = "IOrgstructure">
+		<Field>
+			<Type>int</Type>
+			<Name>Id</Name>
+		</Field>
+		<Field>
+			<Type>IEmployee</Type>
+			<Name>Employee</Name>
+		</Field>
+	</Domain>
+</Domains>

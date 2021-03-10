@@ -1,0 +1,16 @@
+namespace Domain_Namespace
+{
+	using System;
+
+	public interface DomainName : DomainNameKey, DomainNameData {}
+
+	public interface DomainNameKey 
+	{
+		DomainKey
+	}
+
+	public interface DomainNameData
+	{
+		DomainData
+	}
+}

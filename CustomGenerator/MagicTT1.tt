@@ -1,0 +1,53 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Xml.dll" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+//------------------------------------------------------------
+//
+//	THIS IS AN AUTO GENERATED FILE. 
+//
+//------------------------------------------------------------
+using System;
+
+namespace CustomDomain
+{
+	class Domains
+	{
+	<#
+	string xmlFileName = "DomainScheme.xml";
+	string dir = System.IO.Path.GetDirectoryName(this.Host.TemplateFile); 
+	
+	//Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..\\"));
+	
+	string xmlPath = Path.Combine(dir, xmlFileName);
+	XmlDocument doc = new XmlDocument();
+	
+	doc.Load(xmlPath);
+	
+	foreach(XmlNode domain in doc.ChildNodes[0].ChildNodes)
+	{
+		string domainName = domain.Attributes["Name"].InnerText;
+	#>
+	public class <#= domainName #> 
+		{
+			<#
+			foreach (XmlNode prop in domain.ChildNodes)
+			{
+			var propertyType = prop.SelectSingleNode("Type").InnerText;
+			var propertyName = prop.SelectSingleNode("Name").InnerText;
+			#>
+			public <#= propertyType #> <#= propertyName #> { get; }
+			<#
+			}
+			#>
+		}
+			
+	<#
+	}
+	
+	#>
+}
+}
