@@ -1,2 +1,2 @@
 # CustomGenerator
-test
+test2
