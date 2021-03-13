@@ -1,1 +1,2 @@
 # CustomGenerator
+test
